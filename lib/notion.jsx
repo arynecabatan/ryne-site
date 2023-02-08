@@ -100,45 +100,47 @@ const getAboutData = (post) => {
 
 const getPosterMetaData = (post) => {
 
-  let file = post.properties.Link;
-  switch (post.properties.Link.files[0].type) {
-      case 'file':
-        file = post.properties.Link.files[0].file.url;
-          break;
-      case 'external':
-        file = post.properties.Link.files[0].external.url
-          break;
-      default:
-        file = 'https://i.imgur.com/K8Ho17u.jpeg'
+  let cover = post.cover;
+
+  switch (cover.type) {
+    case 'file':
+        cover = post.cover.file
+        break;
+    case 'external':
+        cover = post.cover.external.url;
+        break;
+    default:
+        cover = 'https://i.imgur.com/K8Ho17u.jpeg'
   }
 
   return {
     id: post.id,
     title: post.properties.Name.title[0].plain_text,
     idno: post.properties.IDNo.number,
-    link: file,
+    cover: cover,
   };
 }
 
 const getLogoMetaData = (logo) => {
 
-  let file = logo.properties.Link;
-  switch (logo.properties.Link.files[0].type) {
-      case 'file':
-        file = logo.properties.Link.files[0].file.url;
-          break;
-      case 'external':
-        file = logo.properties.Link.files[0].external.url
-          break;
-      default:
-        file = 'https://i.imgur.com/K8Ho17u.jpeg'
+  let cover = logo.cover;
+
+  switch (cover.type) {
+    case 'file':
+        cover = logo.cover.file
+        break;
+    case 'external':
+        cover = logo.cover.external.url;
+        break;
+    default:
+        cover = 'https://i.imgur.com/K8Ho17u.jpeg'
   }
 
   return {
     id: logo.id,
     title: logo.properties.Name.title[0].plain_text,
     idno: logo.properties.IDNo.number,
-    link: file,
+    cover: cover,
   };
 }
 

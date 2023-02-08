@@ -1,10 +1,4 @@
 import { SiBehance, SiDribbble, SiGithub, SiInstagram, SiLinkedin } from 'react-icons/si';
-import {
-  SiAdobephotoshop, SiAdobepremierepro, SiAdobeaftereffects, SiAdobeillustrator,
-  SiAdobeindesign, SiAdobelightroom, SiAdobexd, SiAdobeacrobatreader, SiSketch,
-  SiFigma, SiFramer, SiHtml5, SiJavascript, SiCss3, SiReact, SiGatsby, SiWordpress,
-  SiMarkdown, SiJava, SiPython, SiArduino, SiGit, SiSquarespace, SiGraphql
-} from 'react-icons/si';
 
 export const SEO = {
   siteUrl: 'https://ryne.io/',

@@ -19,11 +19,11 @@ export default function ProjectList ({posts, poster, category}) {
       <div className='flex flex-wrap after:content-[""] after:grow-[999999999] w-[90vw] max-w-[1440px] min-w-auto px-2 md:px-3 desktop:px-4'>
         {
         poster.map((posterName, index) => (
-          <div className='flex-grow h-[300px] mx-1 my-1 relative cursor-pointer'>
+          <div className='flex-grow h-[300px] mx-1 my-1 relative cursor-pointer' key={index}>
             <div onClick={() => {setSwitchBox('open');setCurrentImage(posterName.idno)}} className='absolute h-[300px] w-full flex items-end transition-all bg-gradient-to-t from-black opacity-0 hover:opacity-90 ease-in-out'>
               <p className='text-center text-culturedwhite mb-4 w-full h-auto'>{posterName.title}</p>
             </div>
-            <img src={posterName.link} alt={posterName.title} className="object-cover align-bottom min-w-full max-w-full h-[300px]"/>
+            <img src={posterName.cover} alt={posterName.title} className="object-cover align-bottom min-w-full max-w-full h-[300px]" priority/>
           </div>
         ))
         }

@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import { Lexend } from '@next/font/google'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import { ThemeProvider } from 'next-themes';
 
 const lexend = Lexend({

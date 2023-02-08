@@ -37,14 +37,14 @@ const GalleryBox = ({switchBox, setSwitchBox, dataarray, currentImage, setCurren
       default:
         break;
     }
-  }, []);
+  });
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress)
     return () => {
       window.removeEventListener('keydown', handleKeyPress)
     }
-  }, [])
+  })
 
   if (switchBox === 'open'){
     return(
@@ -60,7 +60,7 @@ const GalleryBox = ({switchBox, setSwitchBox, dataarray, currentImage, setCurren
             <FiArrowLeft className="text-sizzlingred w-6 h-6"/>
           </button>
           <div className="h-full grid items-center justify-center ">
-            <img src={extractData.link} className="object-contain h-screen p-0 sm:p-10 md:p-16 desktop:p-20 shadow-sm"/>
+            <img src={extractData.cover} alt={extractData.name} className="object-contain h-screen p-0 sm:p-10 md:p-16 desktop:p-20 shadow-sm"/>
           </div>
       </div>
       </>

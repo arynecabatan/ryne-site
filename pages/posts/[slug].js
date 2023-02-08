@@ -115,12 +115,12 @@ const Post = ({ post, logo }) => {
                 return(
                   <div className='flex flex-col justify-center w-auto'>
                     <div className='bg-spacecadet/10 dark:bg-culturedwhite/10 rounded-lg flex w-auto my-3 items-center'>
-                      <a href={props.href} target="_blank" className='flex-1 truncate px-4 text-slate-500 font-light italic text'>
+                      <a href={props.href} target="_blank" rel="noreferrer" className='flex-1 truncate px-4 text-slate-500 font-light italic text'>
                         <small>{props.href}</small>
                       </a>
                       
                       <div className='p-4 rounded-r-lg bg-gradient-to-r from-sizzlingred to-tartorange animate-text'>
-                        <a href={props.href} target="_blank">
+                        <a href={props.href} target="_blank" rel="noreferrer">
                             <FiExternalLink className='text-culturedwhite'/>
                         </a>
                       </div>
@@ -139,7 +139,9 @@ const Post = ({ post, logo }) => {
             }
           }}
         >{post.mdString}</ReactMarkdown>
-        <Logofolio slug={post.metadata.slug} logoData={logo}/>
+        <div className="mb-12">
+          <Logofolio slug={post.metadata.slug} logoData={logo}/>
+        </div>
         <div>
           <div className='h-[1px] w-full bg-spacecadet/5 dark:bg-culturedwhite/5'/>
           <span className="space-x-4 opacity-50 flex justify-center m-10">

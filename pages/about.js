@@ -35,7 +35,7 @@ const About = ({about}) => {
         </div>
       </section>
       <section className='h-[40vh] w-full flex items-center text-center justify-center px-3 my-10'>
-        <h1>"I craft <span className='gradient-text'>products and websites </span> focusing on<br/>delivering <span className='gradient-text'>beautiful user experience.</span>"</h1>
+        <h1>I craft <span className='gradient-text'>products and websites </span> focusing on<br/>delivering <span className='gradient-text'>beautiful user experience.</span></h1>
       </section>
 
       
