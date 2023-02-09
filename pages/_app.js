@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import { Lexend } from '@next/font/google'
 import Layout from '../components/Layout'
 import { ThemeProvider } from 'next-themes';
+import { Analytics } from '@vercel/analytics/react';
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }) {
         <Layout>
           <div className="mb-10 flex flex-col justify-center items-center">
             <Component {...pageProps} />
+            <Analytics />
           </div>
         </Layout>
       </main>

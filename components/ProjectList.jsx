@@ -24,7 +24,11 @@ export default function ProjectList ({posts, poster, category}) {
               <p className='text-center text-culturedwhite mb-4 w-full h-auto'>{posterName.title}</p>
             </div>
             <div className=''>
-              <img src={posterName.cover} alt={posterName.title} className="object-cover align-bottom min-w-full max-w-full h-[300px]"/>
+            <Image src={posterName.cover} alt={posterName.title} width={posterName.width} height={posterName.height} className="object-cover align-bottom w-full h-[300px]"/>
+              {/**
+               * <img src={posterName.cover} alt={posterName.title} className="object-cover align-bottom min-w-full max-w-full h-[300px]"/>
+               */
+              }
             </div>
           </div>
         ))

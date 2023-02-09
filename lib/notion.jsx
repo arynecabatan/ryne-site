@@ -117,6 +117,8 @@ const getPosterMetaData = (post) => {
     id: post.id,
     title: post.properties.Name.title[0].plain_text,
     idno: post.properties.IDNo.number,
+    height: post.properties.Height.number,
+    width: post.properties.Width.number,
     cover: cover,
   };
 }
@@ -140,6 +142,8 @@ const getLogoMetaData = (logo) => {
     id: logo.id,
     title: logo.properties.Name.title[0].plain_text,
     idno: logo.properties.IDNo.number,
+    width: 1500,
+    height: 1500,
     cover: cover,
   };
 }

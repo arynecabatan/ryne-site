@@ -1,5 +1,6 @@
 import { FiX, FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 
 const GalleryBox = ({switchBox, setSwitchBox, dataarray, currentImage, setCurrentImage}) => {  
 
@@ -37,7 +38,7 @@ const GalleryBox = ({switchBox, setSwitchBox, dataarray, currentImage, setCurren
       default:
         break;
     }
-  });
+  },[]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress)
@@ -45,6 +46,7 @@ const GalleryBox = ({switchBox, setSwitchBox, dataarray, currentImage, setCurren
       window.removeEventListener('keydown', handleKeyPress)
     }
   })
+
 
   if (switchBox === 'open'){
     return(
@@ -59,8 +61,16 @@ const GalleryBox = ({switchBox, setSwitchBox, dataarray, currentImage, setCurren
           <button onClick={showPrev} className={`bg-black/10 h-10 w-10 absolute top-1/2 left-4 grid items-center justify-center rounded-lg shadow-sm z-50`}>
             <FiArrowLeft className="text-sizzlingred w-6 h-6"/>
           </button>
-          <div className="h-full grid items-center justify-center ">
-            <img src={extractData.cover} alt={extractData.name} className="object-contain h-screen p-0 sm:p-10 md:p-16 desktop:p-20 shadow-sm"/>
+          <div className="h-full grid items-center justify-center">
+            <div className="">
+              <Image src={extractData.cover} width={extractData.width} height={extractData.height} className="shadow-sm w-full h-[90vh]"/>
+            </div>
+            {
+              /**
+               * <img src={extractData.cover} alt={extractData.name} className="object-contain h-screen p-0 sm:p-10 md:p-16 desktop:p-20 shadow-sm"/>
+              */
+            }
+            
           </div>
       </div>
       </>
