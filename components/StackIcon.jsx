@@ -1,6 +1,9 @@
 import {
-  SiAdobephotoshop, SiAdobelightroom, SiAdobepremierepro, SiAdobeaftereffects, SiAdobeillustrator, SiAdobeindesign, SiAdobexd, SiAdobeacrobatreader, SiSketch, SiFigma, SiFramer, SiHtml5, SiJavascript, SiCss3, SiReact, SiGatsby, SiWordpress, SiMarkdown, SiJava, SiPython, SiArduino, SiGit, SiSquarespace, SiGraphql, SiNextdotjs, SiTailwindcss, SiNotion
+  SiAdobephotoshop, SiAdobelightroom, SiAdobepremierepro, SiAdobeaftereffects, SiAdobeillustrator, SiAdobeindesign, SiAdobexd, SiAdobeacrobatreader, SiSketch, SiFigma, SiFramer, SiHtml5, SiJavascript, SiCss3, SiReact, SiGatsby, SiWordpress, SiMarkdown, SiJava, SiPython, SiArduino, SiGit, SiSquarespace, SiGraphql, SiNextdotjs, SiTailwindcss, SiNotion,
 } from 'react-icons/si';
+import {
+  FaElementor
+} from 'react-icons/fa';
 
 import {FiHelpCircle} from 'react-icons/fi';
 
@@ -62,6 +65,8 @@ const StackIcon = ({iconName}) => {
     case "GraphQL": iconType = <SiGraphql/>
       break;
     case "Notion": iconType = <SiNotion/>
+      break;
+    case "Elementor": iconType = <FaElementor/>
       break;
     default: iconType = <FiHelpCircle/>
       break;

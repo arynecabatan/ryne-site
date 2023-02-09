@@ -56,9 +56,14 @@ export default function ProjectList ({posts, poster, category}) {
         </section>
 
         <div className={`${posts.filter(post => {return post.tags.some(e => e.name == category)}).length >= 3 ? `flex flex-col gap-10` : `hidden`}`}>
-          <div className='mt-4 lg:mt-8 text-center'>
-            <h3>Other Projects</h3>
-          </div>
+          {
+            /**
+            <div className='mt-4 lg:mt-8 text-center'>
+              <h3>Other Projects</h3>
+            </div>
+             */
+          }
+
           <section className='max-w-[1440px] w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mobile:grid-cols-2 gap-8'>
           {posts.filter(post => {
               return post.tags.some(e => e.name == category) && (post.top === false)
