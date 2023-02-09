@@ -23,7 +23,9 @@ export default function ProjectList ({posts, poster, category}) {
             <div onClick={() => {setSwitchBox('open');setCurrentImage(posterName.idno)}} className='absolute h-[300px] w-full flex items-end transition-all bg-gradient-to-t from-black opacity-0 hover:opacity-90 ease-in-out'>
               <p className='text-center text-culturedwhite mb-4 w-full h-auto'>{posterName.title}</p>
             </div>
-            <img src={posterName.cover} alt={posterName.title} className="object-cover align-bottom min-w-full max-w-full h-[300px]" priority/>
+            <div className=''>
+              <img src={posterName.cover} alt={posterName.title} className="object-cover align-bottom min-w-full max-w-full h-[300px]"/>
+            </div>
           </div>
         ))
         }
@@ -41,7 +43,7 @@ export default function ProjectList ({posts, poster, category}) {
           .slice(0,3)
           .map((post, index) => (
             <Link className="text-spacecadet dark:text-culturedwhite" key={index} rel="noopener noreferrer" href={`/posts/${post.slug}`}>
-              <Image src={post.cover} alt={post.title} className="rounded-2xl shadow-sm hover:bg-black" width={3000} height={2000} priority/>
+              <Image src={post.cover} alt={post.title} className="rounded-2xl shadow-sm hover:bg-black" width={3000} height={2000}/>
               <div className='my-2 flex flex-col gap-0'>
                 <h4>{post.title}</h4>
                 <small className='text-gray-500 dark:text-gray-400 font-light'>{post.description}</small>
@@ -56,14 +58,12 @@ export default function ProjectList ({posts, poster, category}) {
         </section>
 
         <div className={`${posts.filter(post => {return post.tags.some(e => e.name == category)}).length >= 3 ? `flex flex-col gap-10` : `hidden`}`}>
-          {
-            /**
-            <div className='mt-4 lg:mt-8 text-center'>
-              <h3>Other Projects</h3>
-            </div>
-             */
-          }
 
+          <div className='mt-4 lg:mt-8 text-center'>
+            {/**
+             * <h3>Other Projects</h3>
+             */}
+          </div>
           <section className='max-w-[1440px] w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mobile:grid-cols-2 gap-8'>
           {posts.filter(post => {
               return post.tags.some(e => e.name == category) && (post.top === false)
@@ -71,7 +71,7 @@ export default function ProjectList ({posts, poster, category}) {
             .slice(0,4)
             .map((post, index) => (
               <Link className="text-spacecadet dark:text-culturedwhite" key={index} href={`/posts/${post.slug}`}>
-                <Image src={post.cover} alt={post.title} className="rounded-2xl shadow-sm" width={3000} height={2000} priority/>
+                <Image src={post.cover} alt={post.title} className="rounded-2xl shadow-sm" width={3000} height={2000}/>
                 <div className='my-2 flex flex-col gap-0'>
                   <h4>{post.title}</h4>
                   <small className='text-gray-500 dark:text-gray-400 font-light'>{post.description}</small>

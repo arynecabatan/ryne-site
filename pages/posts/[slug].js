@@ -31,7 +31,7 @@ const Post = ({ post, logo }) => {
       />
       <section className='p-4 max-w-[960px] w-full mt-24 flex flex-col'>
         <div id="cover" className='flex gap-3 flex-col md:flex-row md:gap-6 items-center'>
-          <Image priority src={post.metadata.cover} alt={"Ryne Design Image"} width="600" height="400" className='rounded-lg md:w-1/2'/>
+          <Image src={post.metadata.cover} alt={"Ryne Design Image"} width="600" height="400" className='rounded-xl md:w-1/2'/>
           <div className='text-center md:text-left w-full flex flex-col justify-center gap-2'>
             <h1 className='text-5xl text-sizzlingred dark:text-tartorange'>{post.metadata.title}</h1>
             <h3 className='font-normal'>{post.metadata.description}</h3>
